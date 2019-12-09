@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Figurepainter</string>
+    <string name="line">Отрезок</string>
+    <string name="box">Прямоугольник</string>
+    <string name="path">Кривая</string>
+    <string name="select_color">Выбрать цвет</string>
+    <string name="clear">Очистить</string>
+    <string name="choose_color">Выбрать</string>
+    <string name="cancel">Отмена</string>
+</resources>
