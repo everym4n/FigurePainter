@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView colorOval;
 
     private PaintView paintView;
-    private ColorPickerPopup colorPicker;
     private Spinner spinner;
 
     @Override
@@ -56,15 +55,6 @@ public class MainActivity extends AppCompatActivity {
     private void initColorPicking() {
 
         setPickedColor(paintView.getColor());
-        colorPicker = new ColorPickerPopup.Builder(MainActivity.this)
-                .initialColor(paintView.getColor())
-                .enableBrightness(true)
-                .enableAlpha(false) // Enable alpha slider or not
-                .okTitle(getResources().getString(R.string.choose_color))
-                .cancelTitle(getResources().getString(R.string.cancel))
-                .showIndicator(true)
-                .showValue(false)
-                .build();
     }
 
     private void initSpinner() {
@@ -91,7 +81,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pickColor() {
-        colorPicker.show(colorOval, new ColorPickerPopup.ColorPickerObserver() {
+        new ColorPickerPopup.Builder(MainActivity.this)
+                .initialColor(paintView.getColor())
+                .enableBrightness(true)
+                .enableAlpha(false)
+                .okTitle(getResources().getString(R.string.choose_color))
+                .cancelTitle(getResources().getString(R.string.cancel))
+                .showIndicator(true)
+                .showValue(false)
+                .build().show(colorOval, new ColorPickerPopup.ColorPickerObserver() {
             @Override
             public void onColorPicked(int color) {
                 paintView.setColor(color);

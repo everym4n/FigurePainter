@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation_main">5dp</dimen>
+    <dimen name="padding_main">8dp</dimen>
+    <dimen name="color_circle_size">40dp</dimen>
+</resources>
